@@ -38,6 +38,7 @@ define bind::server::file (
   $source_base = undef,
   $content     = undef,
   $ensure      = undef,
+  $replace     = true,
 ) {
 
   include '::bind::params'
@@ -67,6 +68,7 @@ define bind::server::file (
     mode    => $mode,
     source  => $zone_source,
     content => $content,
+    replace => $replace,
     notify  => Class['::bind::service'],
     # For the parent directory
     require => [
