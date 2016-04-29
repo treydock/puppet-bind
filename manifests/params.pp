@@ -8,7 +8,11 @@ class bind::params {
       $servicename             = 'named'
       $binduser                = 'root'
       $bindgroup               = 'named'
-      $service_restart_command = "service ${servicename} reload"
+      if versioncmp($::operatingsystemmajrelease, '6') > 0 {
+        $service_restart_command = "systemctl reload ${servicename}"
+      } else {
+        $service_restart_command = "service ${servicename} reload"
+      }
     }
     'Debian': {
       $packagenameprefix       = 'bind9'
