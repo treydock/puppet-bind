@@ -1,3 +1,13 @@
+#### 2019-01-21 - 0.5.4
+* Add zone file validation (#91, @forgodssake).
+* Fix hint and rfc1912 zones on Debian (#61, #83).
+* Add support for configuring forward mode (#73, @warrenpnz).
+* Fix server::conf and package ordering (#71, @skrivy).
+* Make sure zonedir gets created after bind::package (#55, @jamesbouressa).
+
+#### 2017-02-02 - 0.5.3
+* Fix undefined variable warning.
+
 #### 2016-02-02 - 0.5.2
 * Fix service name on RHEL7+ with chroot (#56, @arrjay).
 * Fix named.conf template bug related to views (#59, @imerali).
